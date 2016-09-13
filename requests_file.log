@@ -13,3 +13,12 @@
             WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
             ORDER BY name; args=None
 (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.001) SELECT "cnoapp_menuitem"."id", "cnoapp_menuitem"."item_name", "cnoapp_menuitem"."price", "cnoapp_menuitem"."image_url" FROM "cnoapp_menuitem"; args=()
+"GET /get_menu/ HTTP/1.1" 200 1122
+(0.000) SELECT "cnoapp_menuitem"."id", "cnoapp_menuitem"."item_name", "cnoapp_menuitem"."price", "cnoapp_menuitem"."image_url" FROM "cnoapp_menuitem"; args=()
+"GET /get_menu/ HTTP/1.1" 200 1122
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()

@@ -71,7 +71,7 @@ def place_order(request):
             print user.gcm_id
             data['date'] = str(datetime.now())
             response = gcm_master.plaintext_request(registration_id=user.gcm_id, data=data)
-            return JSONResponse("order_placed", status=201)
+            return JSONResponse("order_placed", status=200)
             
 @csrf_exempt
 def accept_order(request):
@@ -79,7 +79,7 @@ def accept_order(request):
         data = JSONParser().parse(request)
         print data['gcm_id']
         response = gcm_user.plaintext_request(registration_id=data['gcm_id'], data={"accepted":"true"})
-        return JSONResponse("order_placed", status=201)
+        return JSONResponse("order_placed", status=200)
             
 @csrf_exempt
 def update_gcm(request):
