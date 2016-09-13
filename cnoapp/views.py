@@ -42,8 +42,13 @@ def add_user(request):
 def add_master(request):
     if request.method == 'POST':
         data = JSONParser().parse(request)
-        user = Master_Profile(gcm_id=data)
-        user.save()
+        master = Master_Profile.objects.all()        
+        if len(master) == 0:
+            user = Master_Profile(gcm_id=data)
+            user.save()
+        else:
+            master[0].gcm_id = data
+            master[0].save()
         return JSONResponse("cool", status=200)
         
 @csrf_exempt
